@@ -3,9 +3,8 @@ package com.daniel.recipes.controller;
 import com.daniel.recipes.entity.Category;
 import com.daniel.recipes.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -28,6 +27,16 @@ public class CategoryController {
     @GetMapping("/all")
     public List<Category> all() {
         return categoryService.findAll();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteById (@PathVariable("id") Long id) {
+        categoryService.deleteById(id);
+    }
+
+    @PostMapping("/add")
+    public Category addCategory (@RequestBody Category category) {
+        return categoryService.addCategory(category);
     }
 
 }

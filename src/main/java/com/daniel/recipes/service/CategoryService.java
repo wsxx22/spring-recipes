@@ -32,4 +32,12 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
+    public void deleteById(Long id) {
+        categoryRepository.deleteById(id);
+    }
+
+    public Category addCategory (Category category) {
+        return categoryRepository.save(category);
+    }
+
 }
