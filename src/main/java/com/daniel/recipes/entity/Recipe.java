@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Recipe extends AbstractEntity{
+public class Recipe extends AbstractEntity {
 
     private String name;
 
