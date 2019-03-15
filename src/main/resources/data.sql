@@ -26,7 +26,7 @@ insert into product (id, name, category_id) values (18, 'Curry Powder Madras', 3
 insert into product (id, name, category_id) values (19, 'Sausage - Breakfast', 3);
 insert into product (id, name, category_id) values (20, 'Sausage - Breakfast', 6);
 
-insert into recipe values (null, 'pierogi');
+insert into recipe values (null, 'pierogi');                -- dodac id uzytkownika
 insert into recipe values (null, 'zupa pomidorowa');
 insert into recipe values (null, 'mielony z ziemniakami');
 insert into recipe values (null, 'schabowy ');
@@ -35,25 +35,26 @@ insert into recipe values (null, 'lody');
 insert into recipe values (null, 'ryz z kurczakiem');
 
 
-insert into recipe_products (recipe_id, products_id) values (6, 5);
-insert into recipe_products (recipe_id, products_id) values (3, 4);
-insert into recipe_products (recipe_id, products_id) values (2, 13);
-insert into recipe_products (recipe_id, products_id) values (3, 6);
-insert into recipe_products (recipe_id, products_id) values (5, 18);
-insert into recipe_products (recipe_id, products_id) values (3, 19);
-insert into recipe_products (recipe_id, products_id) values (5, 6);
-insert into recipe_products (recipe_id, products_id) values (7, 18);
-insert into recipe_products (recipe_id, products_id) values (2, 11);
-insert into recipe_products (recipe_id, products_id) values (6, 16);
-insert into recipe_products (recipe_id, products_id) values (7, 12);
-insert into recipe_products (recipe_id, products_id) values (6, 13);
-insert into recipe_products (recipe_id, products_id) values (5, 4);
-insert into recipe_products (recipe_id, products_id) values (3, 8);
-insert into recipe_products (recipe_id, products_id) values (1, 10);
-insert into recipe_products (recipe_id, products_id) values (5, 8);
-insert into recipe_products (recipe_id, products_id) values (3, 7);
-insert into recipe_products (recipe_id, products_id) values (7, 1);
-insert into recipe_products (recipe_id, products_id) values (2, 20);
-insert into recipe_products (recipe_id, products_id) values (7, 12);
+insert into recipe_products (recipe_id, product_id) values (6, 5);
+insert into recipe_products (recipe_id, product_id) values (3, 4);
+insert into recipe_products (recipe_id, product_id) values (2, 13);
+insert into recipe_products (recipe_id, product_id) values (3, 6);
+insert into recipe_products (recipe_id, product_id) values (5, 18);
+insert into recipe_products (recipe_id, product_id) values (3, 19);
+insert into recipe_products (recipe_id, product_id) values (5, 6);
+insert into recipe_products (recipe_id, product_id) values (7, 18);
+insert into recipe_products (recipe_id, product_id) values (2, 11);
+insert into recipe_products (recipe_id, product_id) values (6, 16);
+insert into recipe_products (recipe_id, product_id) values (7, 12);
+insert into recipe_products (recipe_id, product_id) values (6, 13);
+insert into recipe_products (recipe_id, product_id) values (5, 4);
+insert into recipe_products (recipe_id, product_id) values (3, 8);
+insert into recipe_products (recipe_id, product_id) values (1, 10);
+insert into recipe_products (recipe_id, product_id) values (5, 8);
+insert into recipe_products (recipe_id, product_id) values (3, 7);
+insert into recipe_products (recipe_id, product_id) values (7, 1);
+insert into recipe_products (recipe_id, product_id) values (2, 20);
+insert into recipe_products (recipe_id, product_id) values (7, 12);
 
 
+insert into user (username, password) values ('Adam', 'qwerty123');

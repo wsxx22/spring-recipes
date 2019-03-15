@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/category")
+@RequestMapping(path = "/categories")
 public class CategoryController {
 
     private CategoryService categoryService;
@@ -39,4 +40,8 @@ public class CategoryController {
         return categoryService.addCategory(category);
     }
 
+    @PutMapping("/update/{id}") /* */
+    public Optional<Category> updateCategory (@RequestBody Category newCategory, @PathVariable("id") Long id) {
+        return categoryService.updateCategory(id);
+    }
 }

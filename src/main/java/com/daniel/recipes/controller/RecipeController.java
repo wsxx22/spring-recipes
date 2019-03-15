@@ -1,5 +1,6 @@
 package com.daniel.recipes.controller;
 
+import com.daniel.recipes.dto.RecipeDTO;
 import com.daniel.recipes.entity.Recipe;
 import com.daniel.recipes.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class RecipeController {
     }
 
     @GetMapping("/all")
-    public List<Recipe> findAll () {
+    public List<RecipeDTO> findAll () {
         return recipeService.findAll();
     }
 
