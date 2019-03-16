@@ -1,8 +1,10 @@
 package com.daniel.recipes.service;
 
 import com.daniel.recipes.dto.RecipeDTO;
+import com.daniel.recipes.dto.RecipeProductDTO;
 import com.daniel.recipes.entity.AbstractEntity;
 import com.daniel.recipes.entity.Recipe;
+import com.daniel.recipes.entity.RecipeProduct;
 import com.daniel.recipes.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,12 +39,23 @@ public class RecipeService {
     }
 
     private RecipeDTO convertToDTO(Recipe recipe) {
-        return new RecipeDTO(recipe.getId(), recipe.getName(),
-                recipe.getProducts().stream().map(AbstractEntity::getId).collect(Collectors.toList()));
+        return new RecipeDTO(
+                recipe.getId(),
+                recipe.getName(),
+                recipe.getRecipeProducts().stream().map(rp -> convertRecipeProductToRecipeProductDTO(rp)).collect(Collectors.toList()));
+
     }
 
     private List<RecipeDTO> convertToDTO(List<Recipe> recipes) {
         return recipes.stream().map(r -> convertToDTO(r)).collect(Collectors.toList());
+    }
+
+    private RecipeProductDTO convertRecipeProductToRecipeProductDTO (RecipeProduct recipeProduct) {
+        return new RecipeProductDTO(
+                recipeProduct.getRecipe().getId(),
+                recipeProduct.getProduct().getId(),
+                recipeProduct.getAmount()
+        );
     }
 
 }

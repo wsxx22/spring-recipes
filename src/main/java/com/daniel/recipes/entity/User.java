@@ -15,6 +15,5 @@ public class User extends AbstractEntity {
     private String username;
     private String password;
 
-    //
-    // List<Recipe> recipes
+
 }

@@ -51,11 +51,10 @@ public class ProductService {
                 .id(product.getId())
                 .name(product.getName())
                 .categoryId(product.getCategory().getId())
-                .recipesId(product.getRecipes().stream().map(AbstractEntity::getId).collect(Collectors.toList()))
                 .build();
     }
 
     private List<ProductDTO> convertToDTO(List<Product> products) {
-        return products.stream().map(this::convertToDTO).collect(Collectors.toList());
+        return products.stream().map(product -> convertToDTO(product)).collect(Collectors.toList());
     }
 }

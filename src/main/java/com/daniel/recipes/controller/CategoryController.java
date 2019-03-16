@@ -40,8 +40,8 @@ public class CategoryController {
         return categoryService.addCategory(category);
     }
 
-    @PutMapping("/update/{id}") /* */
-    public Optional<Category> updateCategory (@RequestBody Category newCategory, @PathVariable("id") Long id) {
-        return categoryService.updateCategory(id);
-    }
+//    @PutMapping("/update/{id}") /* */
+//    public Optional<Category> updateCategory (@RequestBody Category newCategory, @PathVariable("id") Long id) {
+//        return categoryService.updateCategory(id);
+//    }
 }

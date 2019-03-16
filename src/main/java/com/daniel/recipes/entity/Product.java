@@ -19,11 +19,14 @@ public class Product extends AbstractEntity {
     @ManyToOne(cascade = CascadeType.ALL, optional = false) // optional false- wymagane
     private Category category;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "recipe_products",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "recipe_id"))
-    private List<Recipe> recipes = new ArrayList<>();
+//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinTable(
+//            name = "recipe_products",
+//            joinColumns = @JoinColumn(name = "product_id"),
+//            inverseJoinColumns = @JoinColumn(name = "recipe_id"))
+//    private List<Recipe> recipes = new ArrayList<>();
+
+
+
 
 }

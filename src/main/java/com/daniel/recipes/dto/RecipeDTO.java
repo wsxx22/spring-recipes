@@ -13,5 +13,7 @@ public class RecipeDTO {
 
     private Long id;
     private String name;
-    private List<Long> productsId;
+
+
+    private List<RecipeProductDTO> recipeProductDTOList;
 }

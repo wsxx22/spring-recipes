@@ -4,15 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDTO {
+public class RecipeProductDTO implements Serializable {
 
-    private Long id;
-    private String username;
+    private Long recipeId;
 
-    // lista przepisow
+    private Long productId;
 
-
+    private String amount;
 }

@@ -1,7 +1,7 @@
 package com.daniel.recipes.controller;
 
 import com.daniel.recipes.dto.UserDTO;
-import com.daniel.recipes.entity.User;
+import com.daniel.recipes.mapper.UserMapper;
 import com.daniel.recipes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,15 +15,18 @@ import java.util.List;
 public class UserController {
 
     private UserService userService;
+    private UserMapper userMapper;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService, UserMapper userMapper) {
         this.userService = userService;
+        this.userMapper = userMapper;
     }
+
 
     @GetMapping("/all")
     public List<UserDTO> getAll() {
-        return userService.findAll();
+        return userMapper.toDTOList(userService.findAll());
     }
 
 }

@@ -26,35 +26,56 @@ insert into product (id, name, category_id) values (18, 'Curry Powder Madras', 3
 insert into product (id, name, category_id) values (19, 'Sausage - Breakfast', 3);
 insert into product (id, name, category_id) values (20, 'Sausage - Breakfast', 6);
 
-insert into recipe values (null, 'pierogi');                -- dodac id uzytkownika
-insert into recipe values (null, 'zupa pomidorowa');
-insert into recipe values (null, 'mielony z ziemniakami');
-insert into recipe values (null, 'schabowy ');
-insert into recipe values (null, 'platki');
-insert into recipe values (null, 'lody');
-insert into recipe values (null, 'ryz z kurczakiem');
+insert into user (username, password) values ('Sigvard', 'wxLDrpKiUZ8');
+insert into user (username, password) values ('Devland', 'yucGk79u');
+insert into user (username, password) values ('Daisey', 'd2KzHasuJUW');
+insert into user (username, password) values ('Joela', 'v2cila4');
+insert into user (username, password) values ('Bethina', 'GYg1Q6r');
+insert into user (username, password) values ('Kahlil', 'i25w1XGNplGJ');
+insert into user (username, password) values ('Moreen', 'nTtqX6Qlt');
+insert into user (username, password) values ('Chicky', 'Ifw2Tc7');
+insert into user (username, password) values ('Denney', 'sPySiPT7sY6');
+insert into user (username, password) values ('Diego', 'BLegg1djcZyc');
+insert into user (username, password) values ('Neal', 'uhnz6a');
+insert into user (username, password) values ('Petr', 'TDRvbm8nk');
+insert into user (username, password) values ('Sabina', 'eZ8ELlIAz');
+insert into user (username, password) values ('Van', '83CCsP9m1Vz');
+insert into user (username, password) values ('Tildi', 'ExEkAy');
+insert into user (username, password) values ('Kassi', 'zqHTxPQBQ8');
+insert into user (username, password) values ('Adelbert', '6kI2FduB');
+insert into user (username, password) values ('Glendon', 'btsSzfB8');
+insert into user (username, password) values ('Dal', 'J6P1iynDt3K');
+insert into user (username, password) values ('Drusy', 'XZg3l4Dc');
 
+insert into user (username, password) values ('Sigvard', 'wxLDrpKiUZ8');
+insert into user (username, password) values ('Devland', 'yucGk79u');
+insert into user (username, password) values ('Daisey', 'd2KzHasuJUW');
+insert into user (username, password) values ('Joela', 'v2cila4');
+insert into user (username, password) values ('Bethina', 'GYg1Q6r');
+insert into user (username, password) values ('Kahlil', 'i25w1XGNplGJ');
+insert into user (username, password) values ('Moreen', 'nTtqX6Qlt');
+insert into user (username, password) values ('Chicky', 'Ifw2Tc7');
+insert into user (username, password) values ('Denney', 'sPySiPT7sY6');
+insert into user (username, password) values ('Diego', 'BLegg1djcZyc');
+insert into user (username, password) values ('Neal', 'uhnz6a');
+insert into user (username, password) values ('Petr', 'TDRvbm8nk');
+insert into user (username, password) values ('Sabina', 'eZ8ELlIAz');
+insert into user (username, password) values ('Van', '83CCsP9m1Vz');
+insert into user (username, password) values ('Tildi', 'ExEkAy');
+insert into user (username, password) values ('Kassi', 'zqHTxPQBQ8');
+insert into user (username, password) values ('Adelbert', '6kI2FduB');
+insert into user (username, password) values ('Glendon', 'btsSzfB8');
+insert into user (username, password) values ('Dal', 'J6P1iynDt3K');
+insert into user (username, password) values ('Drusy', 'XZg3l4Dc');
 
-insert into recipe_products (recipe_id, product_id) values (6, 5);
-insert into recipe_products (recipe_id, product_id) values (3, 4);
-insert into recipe_products (recipe_id, product_id) values (2, 13);
-insert into recipe_products (recipe_id, product_id) values (3, 6);
-insert into recipe_products (recipe_id, product_id) values (5, 18);
-insert into recipe_products (recipe_id, product_id) values (3, 19);
-insert into recipe_products (recipe_id, product_id) values (5, 6);
-insert into recipe_products (recipe_id, product_id) values (7, 18);
-insert into recipe_products (recipe_id, product_id) values (2, 11);
-insert into recipe_products (recipe_id, product_id) values (6, 16);
-insert into recipe_products (recipe_id, product_id) values (7, 12);
-insert into recipe_products (recipe_id, product_id) values (6, 13);
-insert into recipe_products (recipe_id, product_id) values (5, 4);
-insert into recipe_products (recipe_id, product_id) values (3, 8);
-insert into recipe_products (recipe_id, product_id) values (1, 10);
-insert into recipe_products (recipe_id, product_id) values (5, 8);
-insert into recipe_products (recipe_id, product_id) values (3, 7);
-insert into recipe_products (recipe_id, product_id) values (7, 1);
-insert into recipe_products (recipe_id, product_id) values (2, 20);
-insert into recipe_products (recipe_id, product_id) values (7, 12);
+insert into recipe values (null, 'pierogi',2);                -- dodac id uzytkownika
+insert into recipe values (null, 'zupa pomidorowa',5);
+insert into recipe values (null, 'mielony z ziemniakami',10);
+insert into recipe values (null, 'schabowy', 1);
+insert into recipe values (null, 'platki', 20);
+insert into recipe values (null, 'lody', 3);
+insert into recipe values (null, 'ryz z kurczakiem', 16);
 
-
-insert into user (username, password) values ('Adam', 'qwerty123');
+insert into recipe_products (recipe_id, product_id, amount) values (2, 1, '100 ml');
+insert into recipe_products (recipe_id, product_id, amount) values (2, 7, '200 grams');
+insert into recipe_products (recipe_id, product_id, amount) values (2, 10, '20 ml');
