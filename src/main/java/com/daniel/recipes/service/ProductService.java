@@ -31,12 +31,14 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public List<ProductDTO> findByCategoryName(String name) {
-        return convertToDTO(productRepository.findByCategoryName(name));
+    public List<Product> findByCategoryName(String name) {
+//        return convertToDTO(productRepository.findByCategoryName(name));
+        return productRepository.findByCategoryName(name);
     }
 
-    public List<ProductDTO> findByCategoryId(Long id) {
-        return convertToDTO(productRepository.findByCategoryId(id));
+    public List<Product> findByCategoryId(Long id) {
+//        return convertToDTO(productRepository.findByCategoryId(id));
+        return productRepository.findByCategoryId(id);
     }
 
     private ProductDTO convertToDTO(Product product) {
