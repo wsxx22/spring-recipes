@@ -34,6 +34,10 @@ public class RecipeService {
         recipeRepository.deleteById(id);
     }
 
+    public List<RecipeDTO> findAll() {
+        return
+    }
+
     public List<RecipeDTO> findAll () {
         return convertToDTO(recipeRepository.findAll());
     }
