@@ -1,6 +1,8 @@
 package com.daniel.recipes.controller;
 
+import com.daniel.recipes.dto.CategoryDTO;
 import com.daniel.recipes.entity.Category;
+import com.daniel.recipes.mapper.CategoryMapper;
 import com.daniel.recipes.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +16,14 @@ import java.util.Optional;
 public class CategoryController {
 
     private CategoryService categoryService;
+    private CategoryMapper categoryMapper;
 
     @Autowired
-    public CategoryController(CategoryService categoryService) {
+    public CategoryController(CategoryService categoryService, CategoryMapper categoryMapper) {
         this.categoryService = categoryService;
+        this.categoryMapper = categoryMapper;
     }
+
 
     @GetMapping("")
     public String home() {
@@ -26,8 +31,8 @@ public class CategoryController {
     }
 
     @GetMapping("/all")
-    public List<Category> all() {
-        return categoryService.findAll();
+    public List<CategoryDTO> all() {
+        return categoryMapper.toDTOList(categoryService.findAll());
     }
 
     @DeleteMapping("/delete/{id}")

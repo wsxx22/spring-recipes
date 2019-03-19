@@ -23,8 +23,8 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<ProductDTO> findAll(){
-        return convertToDTO(productRepository.findAll());
+    public List<Product> findAll(){
+        return productRepository.findAll();
     }
 
     public Product save(Product product) {
@@ -41,22 +41,22 @@ public class ProductService {
         return productRepository.findByCategoryId(id);
     }
 
-    private ProductDTO convertToDTO(Product product) {
-//        ProductDTO productDTO = new ProductDTO();
-//        product.setId(product.getId());
-//        productDTO.setName(product.getName());
-//        productDTO.setCategoryId(product.getCategory().getId());
+//    private ProductDTO convertToDTO(Product product) {
+////        ProductDTO productDTO = new ProductDTO();
+////        product.setId(product.getId());
+////        productDTO.setName(product.getName());
+////        productDTO.setCategoryId(product.getCategory().getId());
+////
+////        productDTO.setRecipesId(product.getRecipes().stream().map(AbstractEntity::getId).collect(Collectors.toList()));
 //
-//        productDTO.setRecipesId(product.getRecipes().stream().map(AbstractEntity::getId).collect(Collectors.toList()));
-
-        return ProductDTO.builder()
-                .id(product.getId())
-                .name(product.getName())
-                .categoryId(product.getCategory().getId())
-                .build();
-    }
-
-    private List<ProductDTO> convertToDTO(List<Product> products) {
-        return products.stream().map(product -> convertToDTO(product)).collect(Collectors.toList());
-    }
+//        return ProductDTO.builder()
+//                .id(product.getId())
+//                .name(product.getName())
+//                .categoryId(product.getCategory().getId())
+//                .build();
+//    }
+//
+//    private List<ProductDTO> convertToDTO(List<Product> products) {
+//        return products.stream().map(product -> convertToDTO(product)).collect(Collectors.toList());
+//    }
 }

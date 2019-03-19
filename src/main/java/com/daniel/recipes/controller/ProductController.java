@@ -17,19 +17,22 @@ public class ProductController {
     private ProductService productService;
     private ProductMapper productMapper;
 
+
     @Autowired
-    public ProductController(ProductService productService) {
+    public ProductController(ProductService productService, ProductMapper productMapper) {
         this.productService = productService;
+        this.productMapper = productMapper;
     }
+
 
     @GetMapping("/all")
     public List<ProductDTO> findAll() {
-        return productService.findAll();
+        return productMapper.toDTOList(productService.findAll());
     }
 
     @PostMapping("/save")
-    public Product save (@RequestBody Product product) {
-        return productService.save(product);
+    public ProductDTO save(@RequestBody Product product) {
+        return productMapper.toDTO(productService.save(product));
     }
 
     @GetMapping("/category/name/{categoryName}")

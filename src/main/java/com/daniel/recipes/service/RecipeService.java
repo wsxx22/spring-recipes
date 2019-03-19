@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -34,32 +35,32 @@ public class RecipeService {
         recipeRepository.deleteById(id);
     }
 
-    public List<RecipeDTO> findAll() {
-        return
+    public List<Recipe> findAll() {
+        return recipeRepository.findAll();
     }
 
-    public List<RecipeDTO> findAll () {
-        return convertToDTO(recipeRepository.findAll());
+    public Recipe findById(Long id) {
+        return recipeRepository.findById(id).orElseThrow(() -> new RuntimeException("Nie ma takiego przepisu"));
     }
 
-    private RecipeDTO convertToDTO(Recipe recipe) {
-        return new RecipeDTO(
-                recipe.getId(),
-                recipe.getName(),
-                recipe.getRecipeProducts().stream().map(rp -> convertRecipeProductToRecipeProductDTO(rp)).collect(Collectors.toList()));
-
-    }
-
-    private List<RecipeDTO> convertToDTO(List<Recipe> recipes) {
-        return recipes.stream().map(r -> convertToDTO(r)).collect(Collectors.toList());
-    }
-
-    private RecipeProductDTO convertRecipeProductToRecipeProductDTO (RecipeProduct recipeProduct) {
-        return new RecipeProductDTO(
-                recipeProduct.getRecipe().getId(),
-                recipeProduct.getProduct().getId(),
-                recipeProduct.getAmount()
-        );
-    }
+//    private RecipeDTO convertToDTO(Recipe recipe) {
+//        return new RecipeDTO(
+//                recipe.getId(),
+//                recipe.getName(),
+//                recipe.getRecipeProducts().stream().map(rp -> convertRecipeProductToRecipeProductDTO(rp)).collect(Collectors.toList()));
+//
+//    }
+//
+//    private List<RecipeDTO> convertToDTO(List<Recipe> recipes) {
+//        return recipes.stream().map(r -> convertToDTO(r)).collect(Collectors.toList());
+//    }
+//
+//    private RecipeProductDTO convertRecipeProductToRecipeProductDTO (RecipeProduct recipeProduct) {
+//        return new RecipeProductDTO(
+//                recipeProduct.getRecipe().getId(),
+//                recipeProduct.getProduct().getId(),
+//                recipeProduct.getAmount()
+//        );
+//    }
 
 }
