@@ -8,6 +8,7 @@ import org.mapstruct.Mappings;
 import org.mapstruct.NullValueMappingStrategy;
 
 import java.util.List;
+import java.util.Set;
 
 @Mapper (componentModel = "spring", uses = {ProductMapper.class}, nullValueMappingStrategy = NullValueMappingStrategy.RETURN_DEFAULT) // uzywanie innego mapera
 public interface RecipeProductMapper {
@@ -19,6 +20,6 @@ public interface RecipeProductMapper {
     RecipeProductDTO toDTO (RecipeProduct recipeProduct);
 
 
-    List<RecipeProductDTO> toDTOList (List<RecipeProduct> recipeProductList);
+    Set<RecipeProductDTO> toDTOSet (Set<RecipeProduct> recipeProductList);
 
 }

@@ -1,17 +1,11 @@
 package com.daniel.recipes.service;
 
-import com.daniel.recipes.dto.RecipeDTO;
-import com.daniel.recipes.dto.RecipeProductDTO;
-import com.daniel.recipes.entity.AbstractEntity;
 import com.daniel.recipes.entity.Recipe;
-import com.daniel.recipes.entity.RecipeProduct;
 import com.daniel.recipes.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class RecipeService {
@@ -42,6 +36,8 @@ public class RecipeService {
     public Recipe findById(Long id) {
         return recipeRepository.findById(id).orElseThrow(() -> new RuntimeException("Nie ma takiego przepisu"));
     }
+
+
 
 //    private RecipeDTO convertToDTO(Recipe recipe) {
 //        return new RecipeDTO(

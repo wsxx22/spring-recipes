@@ -79,3 +79,14 @@ insert into recipe values (null, 'ryz z kurczakiem', 16);
 insert into recipe_products (recipe_id, product_id, amount) values (2, 1, '100 ml');
 insert into recipe_products (recipe_id, product_id, amount) values (2, 7, '200 grams');
 insert into recipe_products (recipe_id, product_id, amount) values (2, 10, '20 ml');
+
+insert into step (recipe_id, step_number, step) values (1, 1, 'dodaj mieso');
+insert into step (recipe_id, step_number, step) values (1, 3, 'dodaj zmieniaki');
+insert into step (recipe_id, step_number, step) values (1, 2, 'dodaj sol');
+
+insert into step_products(step_id, product_id, amount) values (1, 2, '200gram');
+insert into step_products(step_id, product_id, amount) values (1, 1, '300 gram');
+insert into step_products(step_id, product_id, amount) values (2, 6, '10gr soli');
+insert into step_products(step_id, product_id, amount) values (2, 4, '4 sztuki');
+insert into step_products(step_id, product_id, amount) values (3, 10, '4 sztuki');
+insert into step_products(step_id, product_id, amount) values (3, 9, '4 sztuki');

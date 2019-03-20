@@ -5,7 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -30,5 +33,9 @@ public class Recipe extends AbstractEntity {
     private User user;
 
     @OneToMany(mappedBy = "recipe", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<RecipeProduct> recipeProducts;
+    private Set<RecipeProduct> recipeProducts = new HashSet<>();
+
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OrderBy("stepNumber")
+    private List<Step> steps = new ArrayList<>();
 }
