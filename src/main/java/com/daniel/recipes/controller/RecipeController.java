@@ -24,7 +24,10 @@ public class RecipeController {
     private RecipeStepsMapper recipeStepsMapper;
 
     @Autowired
-    public RecipeController(RecipeService recipeService, RecipeMapper recipeMapper, RecipeProductMapper recipeProductMapper, RecipeStepsMapper recipeStepsMapper) {
+    public RecipeController(RecipeService recipeService,
+                            RecipeMapper recipeMapper,
+                            RecipeProductMapper recipeProductMapper,
+                            RecipeStepsMapper recipeStepsMapper) {
         this.recipeService = recipeService;
         this.recipeMapper = recipeMapper;
         this.recipeProductMapper = recipeProductMapper;

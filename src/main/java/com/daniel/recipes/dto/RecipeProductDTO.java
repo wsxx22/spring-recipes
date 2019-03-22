@@ -18,4 +18,5 @@ public class RecipeProductDTO implements Serializable {
     private ProductDTO product;
 
     private String amount;
+
 }

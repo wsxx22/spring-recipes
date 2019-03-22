@@ -7,7 +7,8 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 import java.util.List;
-// /recipe/1/steps/lista produktow w tym kroku
+
+
 @Mapper(componentModel = "spring")
 public interface StepProductMapper {
 
@@ -15,7 +16,8 @@ public interface StepProductMapper {
             @Mapping(target = "stepId", source = "step.id"),
             @Mapping(target = "productId", source = "product.id")
     })
-    StepProductDTO toDto(StepProduct stepProduct);
+    StepProductDTO toDto (StepProduct stepProduct);
 
-    List<StepProductDTO> toDtoList(List<StepProduct> stepProducts);
+    List<StepProductDTO> toDtoList (List<StepProduct> stepProducts);
+
 }

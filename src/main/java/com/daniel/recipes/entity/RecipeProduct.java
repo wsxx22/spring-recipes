@@ -26,4 +26,6 @@ public class RecipeProduct implements Serializable {
     private Product product;
 
     private String amount;
+
+
 }

@@ -17,6 +17,7 @@ import java.util.Set;
 public class Step extends AbstractEntity {
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "recipe_id")
     private Recipe recipe;
 
     private Long stepNumber;
@@ -24,6 +25,6 @@ public class Step extends AbstractEntity {
     private String step;
 
     @OneToMany(mappedBy = "step", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<StepProduct> stepProducts = new ArrayList<>();
+    private List<StepProduct> stepProducts;
 }
 
